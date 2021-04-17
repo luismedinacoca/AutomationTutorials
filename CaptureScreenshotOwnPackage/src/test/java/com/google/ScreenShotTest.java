@@ -1,5 +1,6 @@
 package com.google;
 
+import com.utility.TakeScreenShot;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -29,14 +30,12 @@ public class ScreenShotTest {
     @Test
     public void test01(){
         driver.findElement(By.name("q")).sendKeys("Hello World");
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        TakeScreenShot.takingSreenshot(driver, "screenshot-test01");
+    }
 
-        try{
-            FileUtils.copyFile(source, new File("C:\\Workspace\\AutomationTutorials\\CaptureScreenshot\\Screenshot\\screenShot.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @Test
+    public void test02(){
+        TakeScreenShot.takingSreenshot(driver, "screenshot-test02");
     }
 
     @AfterMethod
