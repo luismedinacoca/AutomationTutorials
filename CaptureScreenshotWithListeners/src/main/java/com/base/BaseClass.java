@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BaseClass {
     public static WebDriver driver;
@@ -21,11 +23,12 @@ public class BaseClass {
     }
 
     public void screenShot(String fileName){
+        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
         try{
-            FileUtils.copyFile(source, new File(projectPath + "\\screenshots\\"+fileName+".png"));
+            FileUtils.copyFile(source, new File(projectPath + "\\screenshots\\"+fileName+"_"+dateName+".png"));
         } catch (IOException e) {
             e.getMessage();
         }    }
