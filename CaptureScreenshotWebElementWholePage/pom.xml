@@ -17,6 +17,13 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -37,11 +44,12 @@
             <artifactId>ashot</artifactId>
             <version>1.5.4</version>
         </dependency>
+
+        <!-- take screenshot of a webelement -->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.4.0</version>
-            <scope>compile</scope>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
         </dependency>
 
 
